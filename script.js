@@ -1,3 +1,10 @@
+function doGet(){
+
+return ContentService
+.createTextOutput("API Absensi Aktif");
+
+}
+
 const API_URL = "https://script.google.com/macros/s/AKfycbyDsqK9DcfegcXIRa4yV7WbDw04Ahi1_hLu2YUNEtd9wF6p7q_E7gnUBQCoD0i6OoI/exec";
 
 function absen(){
