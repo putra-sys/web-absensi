@@ -1,36 +1,13 @@
-function doGet(){
+const API_URL = "https://script.google.com/macros/s/AKfycbyd2H5EOp6_482xWjuMhyjMItiL4pmoPpS_rll2eoRAk_b8uziYYZ9VyPU0dQCd0Pcb/exec";
 
-return ContentService
-.createTextOutput("API Absensi Aktif");
-
-}
-
-const API_URL = "https://script.google.com/macros/s/AKfycbyDsqK9DcfegcXIRa4yV7WbDw04Ahi1_hLu2YUNEtd9wF6p7q_E7gnUBQCoD0i6OoI/exec";
-
-function absen(){
-
-let data = {
-
-nama:document.getElementById("nama").value,
-
-tanggal:new Date().toLocaleDateString(),
-
-jam:new Date().toLocaleTimeString()
-
-};
-
-fetch(API_URL,{
-
-method:"POST",
-
-body:JSON.stringify(data)
-
+fetch(API_URL, {
+  method: "POST",
+  body: JSON.stringify({
+    nama: nama,
+    jam: new Date().toLocaleTimeString(),
+    gps: lokasi,
+    foto: foto
+  })
 })
-
-.then(res=>{
-
-document.getElementById("status").innerHTML="Absensi berhasil";
-
-});
-
-}
+.then(res => res.text())
+.then(data => alert("Absensi berhasil"));
