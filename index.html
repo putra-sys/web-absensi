@@ -4,20 +4,22 @@
 <head>
 
 <title>Absensi Online</title>
-
 <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<h1>Absensi Karyawan</h1>
-
 <div class="card">
 
-<input id="nama" placeholder="Nama Karyawan">
+<h2>Absensi Online</h2>
 
-<button onclick="absen()">Absen Masuk</button>
+<input id="nama" placeholder="Masukkan nama">
+
+<video id="video" autoplay></video>
+
+<button onclick="ambilFoto()">Ambil Foto</button>
+<button onclick="absen()">Absen</button>
 
 <p id="status"></p>
 
